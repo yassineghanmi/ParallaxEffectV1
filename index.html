@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mountains</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header id="head">
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Work</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </header>
+    <section>
+      <img src="images/stars.png" alt="stars" id="stars" />
+      <img src="images/moon.png" alt="moon" id="moon" />
+      <img
+        src="images/mountains_behind.png"
+        alt="montains_behind"
+        id="montains_behind"
+      />
+
+      <h2 id="text">Moon Light</h2>
+      <a href="#sec" class="btn" id="btn">Explore</a>
+      <img
+        src="images/mountains_front.png"
+        alt="montains_front"
+        id="montains_front"
+      />
+    </section>
+    <div class="sec" id="sec">
+      <h2>Parallax Scrolling Effects</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, minima.
+        Unde voluptas architecto dolorem, quia, laboriosam ullam adipisci
+        perspiciatis voluptate non aliquam labore. Molestias dolores blanditiis
+        beatae et laudantium architecto?Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Odio optio, aperiam necessitatibus explicabo est eius
+        aliquam, minus quo ab dolorum aspernatur recusandae voluptatum
+        temporibus autem nostrum libero fuga nisi quod!<br /><br />Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Id, minima. Unde voluptas
+        architecto dolorem, quia, laboriosam ullam adipisci perspiciatis
+        voluptate non aliquam labore. Molestias dolores blanditiis beatae et
+        laudantium architecto?Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Odio optio, aperiam necessitatibus explicabo est eius aliquam,
+        minus quo ab dolorum aspernatur recusandae voluptatum temporibus autem
+        nostrum libero fuga nisi quod!<br /><br />Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Id, minima. Unde voluptas architecto
+        dolorem, quia, laboriosam ullam adipisci perspiciatis voluptate non
+        aliquam labore. Molestias dolores blanditiis beatae et laudantium
+        architecto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+        optio, aperiam necessitatibus explicabo est eius aliquam, minus quo ab
+        dolorum aspernatur recusandae voluptatum temporibus autem nostrum libero
+        fuga nisi quod!<br /><br />Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Id, minima. Unde voluptas architecto dolorem, quia,
+        laboriosam ullam adipisci perspiciatis voluptate non aliquam labore.
+        Molestias dolores blanditiis beatae et laudantium architecto?Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Odio optio, aperiam
+        necessitatibus explicabo est eius aliquam, minus quo ab dolorum
+        aspernatur recusandae voluptatum temporibus autem nostrum libero fuga
+        nisi quod!<br /><br />Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Id, minima. Unde voluptas architecto dolorem, quia, laboriosam
+        ullam adipisci perspiciatis voluptate non aliquam labore. Molestias
+        dolores blanditiis beatae et laudantium architecto?Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Odio optio, aperiam necessitatibus
+        explicabo est eius aliquam, minus quo ab dolorum aspernatur recusandae
+        voluptatum temporibus autem nostrum libero fuga nisi quod!<br /><br />Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Id, minima. Unde
+        voluptas architecto dolorem, quia, laboriosam ullam adipisci
+        perspiciatis voluptate non aliquam labore. Molestias dolores blanditiis
+        beatae et laudantium architecto?Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Odio optio, aperiam necessitatibus explicabo est eius
+        aliquam, minus quo ab dolorum aspernatur recusandae voluptatum
+        temporibus autem nostrum libero fuga nisi quod!<br /><br />Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Id, minima. Unde voluptas
+        architecto dolorem, quia, laboriosam ullam adipisci perspiciatis
+        voluptate non aliquam labore. Molestias dolores blanditiis beatae et
+        laudantium architecto?Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Odio optio, aperiam necessitatibus explicabo est eius aliquam,
+        minus quo ab dolorum aspernatur recusandae voluptatum temporibus autem
+        nostrum libero fuga nisi quod!<br /><br />
+      </p>
+    </div>
+    <script>
+      let stars = document.getElementById("stars");
+      let moon = document.getElementById("moon");
+      let montains_behind = document.getElementById("montains_behind");
+      let montains_front = document.getElementById("montains_front");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let header = document.getElementById("head");
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        console.log(value);
+        stars.style.left = value * 0.25 + "px";
+        moon.style.top = value * 1.05 + "px";
+        montains_behind.style.top = value * 0.5 + "px";
+        text.style.marginRight = value * 1.1 + "px";
+        text.style.marginTop = value * 1.3 + "px";
+        btn.style.marginTop = value * 1.5 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+      $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on("click", function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              3000,
+              function () {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+      });
+    </script>
+  </body>
+</html>
